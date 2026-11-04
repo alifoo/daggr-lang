@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <curl/curl.h>
+#include <vector>
 
 // libcurl calls this repeatedly as it receives chunks of data from the internet
 size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* s) {
@@ -18,6 +19,7 @@ size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* s) 
 }
 
 int main() {
+    CLI::App app{"A simple CLI translator"};
     CURL* curl;
     CURLcode res;
 
